@@ -7,7 +7,11 @@ public class Main {
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
                 System.out.print("> ");
-                CommandHandler.execute(scanner.nextLine());
+                boolean success = CommandHandler.execute(scanner.nextLine());
+                
+                if (!success) {
+                    System.out.println("< Invalid command.");
+                }
             }
         }
     }
