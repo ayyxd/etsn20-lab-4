@@ -23,12 +23,9 @@ public class PatternFinder {
             String line;
 
             while ((line = reader.readLine()) != null) {
-                if (caseInsensitive) {
-                    line = line.toLowerCase();
-                    pattern = pattern.toLowerCase();
-                }
-
-                if (line.contains(pattern)) {
+                boolean containsPattern = caseInsensitive ? line.toLowerCase().contains(pattern.toLowerCase()) : line.contains(pattern);
+                
+                if (containsPattern) {
                     result.add(line);
                 }
             }
