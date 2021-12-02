@@ -4,6 +4,7 @@ import java.util.List;
 public class CommandHandler {
     
     private static List<Command> commands = new ArrayList<Command>() {{
+        add(new SearchCommand());
     }};
 
     /**
